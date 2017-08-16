@@ -5,10 +5,9 @@
   "scripts": {
     "start": "node dist/index.js",
     "test": "npm run build; npm run mocha",
-    "build": "npm run clean; npm run build-ts; npm run copyfiles",
+    "build": "npm run clean; npm run build-ts",
     "build-ts": "tsc",
     "clean": "rm -r dist",
-    "copyfiles": "copyfiles --up 1 'src/**/*.gql' dist/",
     "mocha": "node_modules/.bin/mocha --full-trace dist/**/*-test.js || true"
   },
   "author": "Joshua Dutton",
@@ -27,7 +26,6 @@
     "@types/node": "^7.0.35",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
-    "copyfiles": "^1.2.0",
     "mocha": "^3.4.2",
     "typescript": "^2.4.2"
   }

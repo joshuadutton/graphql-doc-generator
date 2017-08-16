@@ -100,7 +100,9 @@ function printDefinition(definition: any, schema: GraphQLSchema, heading?: strin
   if (definition.name) {
     name = definition.name.value;
     const object: any = schema.getType(name);
-    description = object.description || '';
+    if (object) {
+      description = object.description || '';
+    }
   }
 
   const nameString = (name && heading) ? `${heading} ${name}\n\n` : '';
